@@ -32,7 +32,7 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 <?php
 
 	$que="select * , a.num as myNum, a.price as myPrice, b.price as itemPrice, a.regDate as myregDate 
-	from myItem a, taobao b where a.pnum=b.num and a.uid='hyoukhoon' order by a.num desc limit 3";
+	from myItem a, taobao b where a.pnum=b.num and a.uid='hyoukhoon' and a.itemName<>'' order by a.num desc limit 3";
 //	echo $que;
 	$result = $mysqli->query($que) or die("3:".$mysqli->error);
 	while($rs = $result->fetch_object()){
