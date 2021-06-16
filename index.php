@@ -100,6 +100,16 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 <?php
 foreach($rsc as $p){
 	$tf=explode(",",$p->thumbFile);
+	$salePrice=0;
+	if($p->nowFee){
+		if($p->nowUnit=="원"){
+			$salePrice=$p->myPrice-$p->nowFee;
+		}else if($p->nowUnit=="%"){
+			$salePrice=$p->myPrice-($p->myPrice*($p->nowFee/100));
+		}
+	}else{
+		$salePrice=$p->myPrice;
+	}
 ?>		
 											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
 												<div class="single-product">
@@ -122,7 +132,7 @@ foreach($rsc as $p){
 													<div class="product-content">
 														<h3><a href="product-details.html"><?php echo stripslashes($p->itemName);?></a></h3>
 														<div class="product-price">
-															<span><?php echo stripslashes($p->price);?>원</span>
+															<span><?php echo number_format($salePrice);?>원</span>
 														</div>
 													</div>
 												</div>
