@@ -46,7 +46,9 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 			<div class="row">
 				<!-- Single Banner  -->
 <?php
+$k=0;
 foreach($rsc as $p){
+	if($k<3){
 	$tf=explode(",",$p->thumbFile);
 ?>				
 				<div class="col-lg-4 col-md-6 col-12">
@@ -58,7 +60,9 @@ foreach($rsc as $p){
 						</div>
 					</div>
 				</div>
-<?php 
+<?php
+	$k++; 
+	}
 }?>				
 				<!-- /End Single Banner  -->
 				
