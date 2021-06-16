@@ -45,27 +45,41 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 		<div class="container-fluid">
 			<div class="row">
 				<!-- Single Banner  -->
-<?php
-$k=0;
-foreach($rsc as $p){
-	if($k<3){
-	$tf=explode(",",$p->thumbFile);
-?>				
 				<div class="col-lg-4 col-md-6 col-12">
 					<div class="single-banner">
-						<img src="https://www.mallpro.kr/thumb/<?echo $tf[0]?>" alt="#">
+						<img src="https://via.placeholder.com/600x370" alt="#">
 						<div class="content">
-							<p><h3><?echo stripslashes($p->itemName);?></h3></p>
+							<p>Man's Collectons</p>
+							<h3>Summer travel <br> collection</h3>
 							<a href="#">Discover Now</a>
 						</div>
 					</div>
 				</div>
-<?php
-	$k++; 
-	}
-}?>				
 				<!-- /End Single Banner  -->
-				
+				<!-- Single Banner  -->
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="single-banner">
+						<img src="https://via.placeholder.com/600x370" alt="#">
+						<div class="content">
+							<p>Bag Collectons</p>
+							<h3>Awesome Bag <br> 2020</h3>
+							<a href="#">Shop Now</a>
+						</div>
+					</div>
+				</div>
+				<!-- /End Single Banner  -->
+				<!-- Single Banner  -->
+				<div class="col-lg-4 col-12">
+					<div class="single-banner tab-height">
+						<img src="https://via.placeholder.com/600x370" alt="#">
+						<div class="content">
+							<p>Flash Sale</p>
+							<h3>Mid Season <br> Up to <span>40%</span> Off</h3>
+							<a href="#">Discover Now</a>
+						</div>
+					</div>
+				</div>
+				<!-- /End Single Banner  -->
 			</div>
 		</div>
 	</section>
