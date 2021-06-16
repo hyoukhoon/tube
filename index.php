@@ -29,47 +29,38 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 		<!--/ End Single Slider -->
 	</section>
 	<!--/ End Slider Area -->
-	
+<?php
+
+	$que="select * , a.num as myNum, a.price as myPrice, b.price as itemPrice, a.regDate as myregDate 
+	from myItem a, taobao b where a.pnum=b.num and a.uid='hyoukhoon' limit 3";
+//	echo $que;
+	$result = $mysqli->query($que) or die("3:".$mysqli->error);
+	while($rs = $result->fetch_object()){
+			$rsc[]=$rs;
+	}
+
+?>	
 	<!-- Start Small Banner  -->
 	<section class="small-banner section">
 		<div class="container-fluid">
 			<div class="row">
 				<!-- Single Banner  -->
+<?php
+foreach($rsc as $p){
+	$tf=explode(",",$p->thumbFile);
+?>				
 				<div class="col-lg-4 col-md-6 col-12">
 					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
+						<img src="/thumb/<?echo $tf[0]?>" width="600" height="370" alt="#">
 						<div class="content">
-							<p>Man's Collectons</p>
-							<h3>Summer travel <br> collection</h3>
+							<?echo stripslashes($p->itemName);?>
 							<a href="#">Discover Now</a>
 						</div>
 					</div>
 				</div>
+<?php }?>				
 				<!-- /End Single Banner  -->
-				<!-- Single Banner  -->
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<p>Bag Collectons</p>
-							<h3>Awesome Bag <br> 2020</h3>
-							<a href="#">Shop Now</a>
-						</div>
-					</div>
-				</div>
-				<!-- /End Single Banner  -->
-				<!-- Single Banner  -->
-				<div class="col-lg-4 col-12">
-					<div class="single-banner tab-height">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<p>Flash Sale</p>
-							<h3>Mid Season <br> Up to <span>40%</span> Off</h3>
-							<a href="#">Discover Now</a>
-						</div>
-					</div>
-				</div>
-				<!-- /End Single Banner  -->
+				
 			</div>
 		</div>
 	</section>
