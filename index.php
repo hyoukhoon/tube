@@ -51,9 +51,9 @@ foreach($rsc as $p){
 ?>				
 				<div class="col-lg-4 col-md-6 col-12">
 					<div class="single-banner">
-						<img src="/thumb/<?echo $tf[0]?>" width="600" height="370" alt="#">
+						<img src="https://www.mallpro.kr/thumb/<?echo $tf[0]?>" width="600" height="370" alt="#">
 						<div class="content">
-							<?echo stripslashes($p->itemName);?>
+							<p><h3><?echo stripslashes($p->itemName);?></h3></p>
 							<a href="#">Discover Now</a>
 						</div>
 					</div>
