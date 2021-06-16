@@ -46,10 +46,10 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 			<div class="row">
 				<!-- Single Banner  -->
 <?php
-//foreach($rsc as $p){
-//	$tf=explode(",",$p->thumbFile);
+foreach($rsc as $p){
+	$tf=explode(",",$p->thumbFile);
 ?>				
-				<!-- <div class="col-lg-4 col-md-6 col-12">
+				<div class="col-lg-4 col-md-6 col-12">
 					<div class="single-banner">
 						<img src="https://www.mallpro.kr/thumb/<?echo $tf[0]?>" alt="#">
 						<div class="content">
@@ -57,9 +57,9 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 							<a href="#">Discover Now</a>
 						</div>
 					</div>
-				</div> -->
+				</div>
 <?php 
-//}?>				
+}?>				
 				<!-- /End Single Banner  -->
 				
 			</div>
