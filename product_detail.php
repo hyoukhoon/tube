@@ -50,9 +50,11 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 									<div class="image">
 									<div class="swiper-container mySwiper">
 										<div class="swiper-wrapper">
-											<div class="swiper-slide"><img src="https://www.mallpro.kr/thumb/<?php echo $tf[0]?>"></div>
-											<div class="swiper-slide"><img src="https://www.mallpro.kr/thumb/<?php echo $tf[1]?>"></div>
-											<div class="swiper-slide"><img src="https://www.mallpro.kr/thumb/<?php echo $tf[2]?>"></div>
+										<?php
+										foreach($tf as $t){
+										?>
+											<div class="swiper-slide"><img src="https://www.mallpro.kr/thumb/<?php echo $t;?>"></div>
+										<?php }?>
 										</div>
 										<div class="swiper-button-next"></div>
 										<div class="swiper-button-prev"></div>
