@@ -23,20 +23,20 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 
 		
 		<!-- Breadcrumbs -->
-		<!-- <div class="breadcrumbs">
+		<div class="breadcrumbs">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
 						<div class="bread-inner">
 							<ul class="bread-list">
-								<li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-								<li class="active"><?php echo stripslashes($rs->itemName);?></li>
+								<li><a href="/">Home<i class="ti-arrow-right"></i></a></li>
+								<li class="active">제품 상세</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 		<!-- End Breadcrumbs -->
 			
 		<!-- Start Blog Single -->
