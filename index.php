@@ -148,7 +148,7 @@ foreach($rsc as $p){
 														</div>
 													</div>
 													<div class="product-content">
-														<h3><a href="product-details.html"><?php echo stripslashes($p->itemName);?></a></h3>
+														<h3><a href="product_detail.php?num=<?php echo $p->myNum;?>"><?php echo stripslashes($p->itemName);?></a></h3>
 														<div class="product-price">
 															<span><?php echo number_format($salePrice);?>원</span>
 														</div>
