@@ -26,7 +26,7 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 						<div class="bread-inner">
 							<ul class="bread-list">
 								<li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-								<li class="active"><a href="blog-single.html"><?php echo stripslashes($rs->itemName);?></a></li>
+								<li class="active"><?php echo stripslashes($rs->itemName);?></li>
 							</ul>
 						</div>
 					</div>
@@ -47,10 +47,10 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 										<img src="https://www.mallpro.kr/thumb/<?php echo $tf[0]?>" alt="#">
 									</div>
 									<div class="blog-detail">
-										<h2 class="blog-title">What are the secrets to start- up success?</h2>
-										<div class="blog-meta">
+										<h2 class="blog-title"><?php echo stripslashes($rs->itemName);?></h2>
+										<!-- <div class="blog-meta">
 											<span class="author"><a href="#"><i class="fa fa-user"></i>By Admin</a><a href="#"><i class="fa fa-calendar"></i>Dec 24, 2018</a><a href="#"><i class="fa fa-comments"></i>Comment (15)</a></span>
-										</div>
+										</div> -->
 										<div class="content">
 											<p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies  Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p>
 											<blockquote> <i class="fa fa-quote-left"></i> Do what you love to do and give it your very best. Whether it's business or baseball, or the theater, or any field. If you don't love what you're doing and you can't give it your best, get out of it. Life is too short. You'll be an old man before you know it. risus. Ut tincidunt, erat eget feugiat eleifend, eros magna dapibus diam.</blockquote>
