@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="zxx">
+<?php session_start();
+include $_SERVER["DOCUMENT_ROOT"]."/inc/dbcon.php";
+?>
+<html lang="kr">
 <head>
 	<!-- Meta Tag -->
     <meta charset="utf-8">
@@ -8,7 +10,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Title Tag  -->
-    <title>Eshop - eCommerce HTML5 Template.</title>
+    <title>Tube Audio</title>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="images/favicon.png">
 	<!-- Web Font -->
@@ -42,6 +44,7 @@
 	<link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
 
+	
 	
 </head>
 <body class="js">
