@@ -1,3 +1,6 @@
+<?php session_start();
+include $_SERVER["DOCUMENT_ROOT"]."/inc/dbcon.php";
+?>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
