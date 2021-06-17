@@ -15,6 +15,7 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
         location_is('','','없는 제품입니다.');
         exit;
     }
+    $tf=explode(",",$rs->thumbFile);
 ?>
 		
 		<!-- Breadcrumbs -->
@@ -43,7 +44,7 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 							<div class="row">
 								<div class="col-12">
 									<div class="image">
-										<img src="https://via.placeholder.com/950x460" alt="#">
+										<img src="https://www.mallpro.kr/thumb/<?php echo $tf[0]?>" alt="#">
 									</div>
 									<div class="blog-detail">
 										<h2 class="blog-title">What are the secrets to start- up success?</h2>
