@@ -17,6 +17,10 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
     }
     $tf=explode(",",$rs->thumbFile);
 ?>
+<link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 		
 		<!-- Breadcrumbs -->
 		<div class="breadcrumbs">
@@ -44,7 +48,22 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 							<div class="row">
 								<div class="col-12">
 									<div class="image">
-										<img src="https://www.mallpro.kr/thumb/<?php echo $tf[0]?>" alt="#">
+									<div class="swiper-container mySwiper">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">Slide 1</div>
+											<div class="swiper-slide">Slide 2</div>
+											<div class="swiper-slide">Slide 3</div>
+											<div class="swiper-slide">Slide 4</div>
+											<div class="swiper-slide">Slide 5</div>
+											<div class="swiper-slide">Slide 6</div>
+											<div class="swiper-slide">Slide 7</div>
+											<div class="swiper-slide">Slide 8</div>
+											<div class="swiper-slide">Slide 9</div>
+										</div>
+										<div class="swiper-button-next"></div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-pagination"></div>
+										</div>
 									</div>
 									<div class="blog-detail">
 										<h2 class="blog-title"><?php echo stripslashes($rs->itemName);?></h2>
@@ -257,7 +276,25 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 			</div>
 		</section>
 		<!--/ End Blog Single -->
-			
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+	slidesPerView: 1,
+	spaceBetween: 30,
+	loop: true,
+	pagination: {
+	  el: ".swiper-pagination",
+	  clickable: true,
+	},
+	navigation: {
+	  nextEl: ".swiper-button-next",
+	  prevEl: ".swiper-button-prev",
+	},
+  });
+</script>			
 <?php 
 include $_SERVER["DOCUMENT_ROOT"]."/inc/footer.php";
 ?>
