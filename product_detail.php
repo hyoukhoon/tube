@@ -1,5 +1,20 @@
 <?php 
 include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
+
+    $num=$_GET["num"];
+    if(!$num){
+        location_is('','','제품을 선택해주십시오.');
+        exit;
+    }
+    $que="select * , a.num as myNum, a.price as myPrice, b.price as itemPrice, a.regDate as myregDate 
+	from myItem a, taobao b where a.pnum=b.num and a.uid='hyoukhoon' and a.itemStatus='tube' and a.num=".$num;
+//	echo $que;
+	$result = $mysqli->query($que) or die("3:".$mysqli->error);
+	$rs = $result->fetch_object();
+    if(!$rs){
+        location_is('','','없는 제품입니다.');
+        exit;
+    }
 ?>
 		
 		<!-- Breadcrumbs -->
@@ -10,7 +25,7 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 						<div class="bread-inner">
 							<ul class="bread-list">
 								<li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-								<li class="active"><a href="blog-single.html">Blog Single Sidebar</a></li>
+								<li class="active"><a href="blog-single.html"><?php echo stripslashes($rs->itemName);?></a></li>
 							</ul>
 						</div>
 					</div>
