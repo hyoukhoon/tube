@@ -16,6 +16,38 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
         exit;
     }
     $tf=explode(",",$rs->thumbFile);
+
+	$que2="select * from storeinfo where uid='hyoukhoon'";
+	$result2 = $mysqli->query($que2) or die($mysqli->error);
+	$rs2 = $result2->fetch_object();
+
+	$contents=rawurldecode($rs->itemContents);
+	$contents=str_replace("\\","",$contents);
+//$contents=htmlspecialchars($contents);
+
+if($rs->videoUrl){
+
+	$vUrl=$rs->videoUrl;
+	$vUrl=str_replace("e/1","e/6",$vUrl);
+	$vUrl=str_replace("t/8","t/1",$vUrl);
+	$vUrl=str_replace(".swf",".mp4",$vUrl);
+	$vUrl="http:".$vUrl;
+	$vs="<video width='800' controls='controls' autoplay='autoplay' loop='loop'><source src='".$vUrl."'></video><br><br>";
+	$contents=$vs.$contents;
+	
+}
+
+$contentsText=stripslashes($rs2->topText)."<br>";
+
+	if($rs2->topImage){
+		$contentsTopImage="<img src='".$rs2->topImage."'><br>";
+	}
+
+	if($rs2->footerImage){
+		$contentsFooterImage="<br><img src='".$rs2->footerImage."' width='800'>";
+	}
+
+	$contents=$contentsText.$contentsTopImage.$contents;
 ?>
 <link
       rel="stylesheet"
@@ -67,10 +99,7 @@ include $_SERVER["DOCUMENT_ROOT"]."/inc/header.php";
 											<span class="author"><a href="#"><i class="fa fa-user"></i>By Admin</a><a href="#"><i class="fa fa-calendar"></i>Dec 24, 2018</a><a href="#"><i class="fa fa-comments"></i>Comment (15)</a></span>
 										</div> -->
 										<div class="content">
-											<p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies  Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p>
-											<blockquote> <i class="fa fa-quote-left"></i> Do what you love to do and give it your very best. Whether it's business or baseball, or the theater, or any field. If you don't love what you're doing and you can't give it your best, get out of it. Life is too short. You'll be an old man before you know it. risus. Ut tincidunt, erat eget feugiat eleifend, eros magna dapibus diam.</blockquote>
-											<p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies  Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p>
-											<p>What a crazy time. I have five children in colleghigh school graduates.jpge or pursing post graduate studies  Each of my children attends college far from home, the closest of which is more than 800 miles away. While I miss being with my older children, I know that a college experience can be the source of great growth and experience can be the source of source of great growth and can provide them with even greater in future.</p>
+											<?php echo $contents;?>
 										</div>
 									</div>
 									<div class="share-social">
